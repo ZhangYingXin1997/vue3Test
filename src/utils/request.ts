@@ -1,8 +1,9 @@
-import axios, { type InternalAxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, { type InternalAxiosRequestConfig, type AxiosResponse } from 'axios'
 import { useUserStore } from '@/stores/modules/user'
 
+const baseURL = 'http://192.168.8.112:8080' + (import.meta.env.VITE_BASE_API || '/')
 const service = axios.create({
-  baseURL: import.meta.env.VITE_BASE_API,
+  baseURL,
   timeout: 5000,
   headers: {
     'Content-Type': 'application/json;charset=UTF-8',

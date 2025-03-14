@@ -8,8 +8,20 @@ import { type LoginData, type LoginResult } from './types'
  */
 export const loginApi = (data: LoginData): AxiosPromise<LoginResult> => {
   return request({
-    url: '/auth/login',
+    url: 'auth/login',
     method: 'post',
     data,
+  })
+}
+
+/**
+ * 测试接口
+ * @param data {LoginRequest}
+ */
+export const testApi = (data: object): AxiosPromise<object> => {
+  return request({
+    url: 'auth/test-api',
+    method: 'get',
+    params: data,
   })
 }
